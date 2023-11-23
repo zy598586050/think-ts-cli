@@ -1,0 +1,32 @@
+{
+  "name": "think-ts-cli",
+  "version": "1.0.0",
+  "description": "This is a ThinkTS cli tool.",
+  "keywords": [
+    "think-ts",
+    "think-ts-cli",
+    "think-ts-lib",
+    "cli"
+  ],
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "author": "zhangyu",
+  "license": "ISC",
+  "bin": {
+    "think-ts-cli": "dist/index.js"
+  },
+  "dependencies": {
+    "cli-spinners": "^2.9.1",
+    "commander": "^11.1.0",
+    "download-git-repo": "^3.0.2",
+    "enquirer": "^2.4.1",
+    "figlet": "^1.7.0",
+    "kleur": "^4.1.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8"
+  }
+}
