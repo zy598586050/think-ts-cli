@@ -71,13 +71,13 @@ program.command('create [文件名称]')
                 name: 'templateype',
                 type: 'select',
                 message: '请选择生成模板的类型',
-                choices: ['1.控制器', '2.验证器', '3.路由中间件', '4.路由文件'],
+                choices: ['1.控制器', '2.验证器', '3.路由中间件', '4.模型文件'],
                 prefix: '👉'
             }]);
         switch (templateype) {
             case '1.控制器':
                 if (fs_1.default.existsSync(getDir('controller', name).wirteDir)) {
-                    console.log(`${(0, kleur_1.yellow)('x')} 文件存在`);
+                    console.log(`${(0, kleur_1.yellow)('x')} 该文件存在`);
                 }
                 else {
                     fs_1.default.writeFileSync(getDir('controller', name).wirteDir, getDir('controller', name).readDir);
@@ -85,7 +85,31 @@ program.command('create [文件名称]')
                 }
                 break;
             case '2.验证器':
-                !fs_1.default.existsSync(getDir('controller', name).wirteDir) && fs_1.default.writeFileSync(getDir('controller', name).wirteDir, getDir('controller', name).readDir);
+                if (fs_1.default.existsSync(getDir('validate', name).wirteDir)) {
+                    console.log(`${(0, kleur_1.yellow)('x')} 该文件存在`);
+                }
+                else {
+                    fs_1.default.writeFileSync(getDir('validate', name).wirteDir, getDir('validate', name).readDir);
+                    console.log(`${(0, kleur_1.green)('√')} 创建成功`);
+                }
+                break;
+            case '3.路由中间件':
+                if (fs_1.default.existsSync(getDir('middleware', name).wirteDir)) {
+                    console.log(`${(0, kleur_1.yellow)('x')} 该文件存在`);
+                }
+                else {
+                    fs_1.default.writeFileSync(getDir('middleware', name).wirteDir, getDir('middleware', name).readDir);
+                    console.log(`${(0, kleur_1.green)('√')} 创建成功`);
+                }
+                break;
+            case '4.模型文件':
+                if (fs_1.default.existsSync(getDir('service', name).wirteDir)) {
+                    console.log(`${(0, kleur_1.yellow)('x')} 该文件存在`);
+                }
+                else {
+                    fs_1.default.writeFileSync(getDir('service', name).wirteDir, getDir('service', name).readDir);
+                    console.log(`${(0, kleur_1.green)('√')} 创建成功`);
+                }
                 break;
             default:
                 break;
