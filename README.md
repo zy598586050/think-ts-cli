@@ -72,7 +72,7 @@ think-ts-cli init project-name
 #### 创建模版代码
 
 ```
-think-js-cli create
+think-ts-cli create
 ```
 
 <p align="center">
